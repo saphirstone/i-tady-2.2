@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+
+
+
+
+
+
+<h2>
+  <%= link_to('Voir le profil', user_path(@scenariste.user_id)) %>
+</h2>
+<p>
+  <strong>Nom et prénom:</strong>
+  <%= @scenariste.nom_et_prenom %>
+</p>
+
+<p>
+  <strong>Numero:</strong>
+  <%= @scenariste.numero %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @scenariste.email %>
+</p>
+
+<p>
+  <strong>Info carrière:</strong>
+  <%= @scenariste.info_carriere %>
+</p>
+
+<p>
+  <strong>Ambition:</strong>
+  <%= @scenariste.ambition %>
+</p>
+
+<p>
+  <strong>Spécialité:</strong>
+  <%= @scenariste.specialite %>
+</p>
+
+
+<% if scenariste_author(@scenariste) %>
+  <%= link_to 'Edit', edit_scenariste_path(@scenariste) %> |
+  <%= link_to 'Delete', @scenariste, method: :delete, data: { confirm: "Êtes-vous sure ?" } %> |
+<% end %>
+<%= link_to 'Back', scenaristes_path %>

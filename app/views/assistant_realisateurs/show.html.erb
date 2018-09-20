@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+
+
+
+<h2>
+  <%= link_to('Voir le profil', user_path(@assistant_realisateur.user_id)) %>
+</h2>
+<p>
+  <strong>Nom et prénom:</strong>
+  <%= @assistant_realisateur.nom_et_prenom %>
+</p>
+
+<p>
+  <strong>Numero:</strong>
+  <%= @assistant_realisateur.numero %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @assistant_realisateur.email %>
+</p>
+
+<p>
+  <strong>Info carrière:</strong>
+  <%= @assistant_realisateur.info_carriere %>
+</p>
+
+<p>
+  <strong>Ambition:</strong>
+  <%= @assistant_realisateur.ambition %>
+</p>
+
+<p>
+  <strong>Projet:</strong>
+  <%= @assistant_realisateur.projet %>
+</p>
+
+
+<% if assistant_realisateur_author(@assistant_realisateur) %>
+  <%= link_to 'Edit', edit_assistant_realisateur_path(@assistant_realisateur) %> |
+  <%= link_to 'Delete', @assistant_realisateur, method: :delete, data: { confirm: "Êtes-vous sure ?" } %> |
+<% end %>
+<%= link_to 'Back', assistant_realisateurs_path %>

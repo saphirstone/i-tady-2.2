@@ -1,0 +1,46 @@
+<p id="notice"><%= notice %></p>
+
+
+
+
+
+
+<h2>
+  <%= link_to('Voir le profil', user_path(@makeup.user_id)) %>
+</h2>
+<p>
+  <strong>Nom et prénom:</strong>
+  <%= @makeup.nom_et_prenom %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @makeup.email %>
+</p>
+
+<p>
+  <strong>Équipe:</strong>
+  <%= @makeup.equipe %>
+</p>
+
+<p>
+  <strong>Info carrière:</strong>
+  <%= @makeup.info_carriere %>
+</p>
+
+<p>
+  <strong>Ambition:</strong>
+  <%= @makeup.ambition %>
+</p>
+
+<p>
+  <strong>Spécialité:</strong>
+  <%= @makeup.specialite %>
+</p>
+
+
+<% if makeup_author(@makeup) %>
+  <%= link_to 'Edit', edit_makeup_path(@makeup) %> |
+  <%= link_to 'Delete', @makeup, method: :delete, data: { confirm: "Êtes-vous sure ?" } %> |
+<% end %>
+<%= link_to 'Back', makeups_path %>

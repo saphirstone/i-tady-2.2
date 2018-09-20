@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+
+
+
+
+<h2>
+  <%= link_to('Voir le profil', user_path(@dirphot.user_id)) %>
+</h2>
+<p>
+  <strong>Nom et prénom:</strong>
+  <%= @dirphot.nom_et_prenom %>
+</p>
+
+<p>
+  <strong>Numero:</strong>
+  <%= @dirphot.numero %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @dirphot.email %>
+</p>
+
+<p>
+  <strong>Info carrière:</strong>
+  <%= @dirphot.info_carriere %>
+</p>
+
+<p>
+  <strong>Ambition:</strong>
+  <%= @dirphot.ambition %>
+</p>
+
+<p>
+  <strong>Équipement:</strong>
+  <%= @dirphot.equipement %>
+</p>
+
+<p>
+  <strong>Spécialité:</strong>
+  <%= @dirphot.specialite %>
+</p>
+
+<% if dirphot_author(@dirphot) %>
+  <%= link_to 'Edit', edit_dirphot_path(@dirphot) %> |
+  <%= link_to 'Delete', @dirphot, method: :delete, data: { confirm: "Êtes-vous sure ?" } %> |
+<% end %>
+<%= link_to 'Back', dirphots_path %>

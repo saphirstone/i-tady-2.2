@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+
+
+<h2>
+  <%= link_to('Voir le profil', user_path(@cadreur.user_id)) %>
+</h2>
+<p>
+  <strong>Nom et prénom:</strong>
+  <%= @cadreur.nom_et_prenom %>
+</p>
+
+<p>
+  <strong>Numero:</strong>
+  <%= @cadreur.numero %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @cadreur.email %>
+</p>
+
+<p>
+  <strong>Info carrière:</strong>
+  <%= @cadreur.info_carriere %>
+</p>
+
+<p>
+  <strong>Ambition:</strong>
+  <%= @cadreur.ambition %>
+</p>
+
+
+<% if cadreur_author(@cadreur) %>
+  <%= link_to 'Edit', edit_cadreur_path(@cadreur) %> |
+  <%= link_to 'Delete', @cadreur, method: :delete, data: { confirm: "Êtes-vous sure ?" } %> |
+<% end %>
+<%= link_to 'Back', cadreurs_path %>
